@@ -63,6 +63,8 @@ details.sec[open]>summary::before{transform:rotate(90deg)}
 .rate input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .rate input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
 .rate button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:16px;width:24px}
+.rate button.unk{border:1px solid var(--line);border-radius:6px;width:auto;padding:0 7px;height:34px;font-size:12px;font-weight:600;background:var(--bg)}
+.rate button.unk.on{background:var(--muted);color:var(--bg);border-color:var(--muted)}
 /* resultados */
 #res{margin-top:36px}
 .empty{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;color:var(--muted)}
@@ -106,24 +108,37 @@ textarea{width:100%;min-height:150px;background:var(--surface);color:var(--ink);
 <h1>¿Qué trayectoria es para ti?</h1>
 <p class="lead">Califica cargos, tareas y lugares de trabajo reales, cómo te imaginas tu periodo de práctica, y también cada materia del pénsum y de las trayectorias, según cuánto te atraen. El ranking de más abajo se calcula solo con tus respuestas: mide cuánto te atrae cada opción, no cuánto paga ni cuántos empleos hay. Está hecho para estudiantes de Economía con el pénsum 2024-2 y sus trayectorias flexibles.</p>
 <ul class="legend">
-  <li><b>1</b>Nada</li><li><b>2</b>Poco</li><li><b>3</b>Normal</li><li><b>4</b>Me gusta</li><li><b>5</b>Me encanta</li><li>Sin marcar = no la conozco, no cuenta</li><li><b>×</b>Quitar mi respuesta</li>
+  <li><b>1</b>Nada</li><li><b>2</b>Poco</li><li><b>3</b>Normal</li><li><b>4</b>Me gusta</li><li><b>5</b>Me encanta</li><li>Sin marcar = aún no respondes, no cuenta</li><li><b>?</b>No la conozco o no la entiendo: tampoco cuenta</li><li><b>×</b>Quitar mi respuesta</li>
 </ul>
 <p class="note" style="margin-top:-10px;margin-bottom:12px">Si aún no cursas una materia, califícala por lo que trata el tema (hay una descripción general debajo de cada materia de trayectoria), no solo por el nombre, y confirma el contenido en el syllabus antes de decidir. Si ya la cursaste, califícala con tu experiencia.</p>
-<p class="note" style="margin-bottom:22px">La etiqueta de carga matemática (alta, media, baja) se estimó por el nombre de cada materia. Revísala en el syllabus. El documento de trayectorias rotula Estudios Internacionales como "(Inglés)" sin explicarlo; confirma con la Escuela si las clases son en inglés y qué nivel exigen. Tus respuestas se guardan en este navegador.</p>
+<p class="note" style="margin-bottom:22px"><b>Sobre la etiqueta de carga matemática (alta, media, baja):</b> es una suposición del contenido de cada materia hecha por quien armó el test, no un dato oficial ni validado por profesores. Tómala solo como referencia y revisa el syllabus. Estudios Internacionales lleva la etiqueta "(Inglés)": tiene un requisito de inglés; consulta el nivel exigido con la jefatura. Tus respuestas se guardan en este navegador.</p>
 
 <details class="sec" open style="margin-bottom:18px">
   <summary><h2>Cómo funciona este test</h2></summary>
   <ul class="sec-note" style="padding-left:34px;margin:0 0 8px;max-width:75ch">
-    <li><b>Para qué sirve:</b> te ayuda a ver qué trayectoria flexible (los 21 créditos) se parece más a lo que te gusta. Mide afinidad, no cuánto paga ni cuántos empleos hay. Es una guía, no una predicción ni una decisión.</li>
+    <li><b>Para qué sirve:</b> te ayuda a ver qué trayectoria flexible (los 21 créditos flexibles; puedes cursar más si quieres, por ejemplo dos micro-credenciales de 12) se parece más a lo que te gusta. Mide afinidad, no cuánto paga ni cuántos empleos hay. Es una guía, no una predicción ni una decisión: es un consejo y una recomendación, y al final la decisión de tomar una trayectoria o complementarias se basa en tu propio criterio. La decisión final de tomar una trayectoria o complementarias es tuya y se basa en tu propio criterio. Cualquiera sea tu resultado, puedes volver a hacerlo y reevaluarte, y la validación final de las combinaciones la hace la jefatura de pregrado.</li>
     <li><b>Quién lo puede hacer:</b> cualquier estudiante de Economía de cualquier semestre. No necesitas haber cursado las materias ni haber hecho la práctica.</li>
     <li><b>Cómo se responde:</b> califica de 1 (nada) a 5 (me encanta) cuánto te atrae cada cargo, tarea, lugar de trabajo o materia. Cada respuesta se guarda al instante.</li>
     <li><b>Si no la conoces:</b> déjala sin marcar y no cuenta. Si la marcas, cuenta como una opinión tuya, así que no pongas 3 "por salir del paso". Si no has cursado una materia, guíate por la descripción que aparece debajo, no solo por el nombre.</li>
+    <li><b>El botón "No sé":</b> márcalo si no conoces la materia o no entiendes la pregunta. No suma ni resta (igual que dejarla sin marcar), pero queda registrado y el test te avisa cuánta información le falta a cada resultado.</li>
     <li><b>La ×:</b> quita tu respuesta de esa pregunta y la deja sin marcar, por si te equivocaste o prefieres que no cuente.</li>
     <li><b>Tu semestre:</b> es solo un control. Sirve para marcar como cursadas las materias de los semestres anteriores (puedes ajustarlas con "ya la cursé"). En las materias del pénsum (15 % del cálculo), una cursada pesa más que una que no has visto, porque ahí tu opinión viene de la experiencia.</li>
     <li><b>Qué pesa más:</b> tus calificaciones de las materias de cada micro-credencial (60 %), los cargos y tareas del mundo real (25 %) y las materias del pénsum relacionadas (15 %). Las preguntas de trabajar por tu cuenta cuentan dentro del 25 % del mundo real, y además generan una sección aparte con tu interés por ser independiente.</li>
-    <li><b>Cuándo sale el resultado:</b> cuando respondes al menos 12 preguntas (de cualquier sección). Entre más respondas, más confiable. Al final verás el mejor plan de 21 créditos, los siguientes cuatro, los 28 planes y cada micro-credencial por separado.</li>
+    <li><b>Cuándo sale el resultado:</b> cuando respondes al menos 12 preguntas (de cualquier sección). Entre más respondas, más confiable. Al final verás el mejor plan (de 21 créditos o más), los siguientes cuatro, todos los planes y cada micro-credencial por separado.</li>
     <li><b>Tus datos:</b> las respuestas se guardan solo en tu navegador, nadie más las ve. Con "Copiar mi resumen" las compartes si quieres, y con "Borrar mis respuestas" empiezas de cero.</li>
   </ul>
+</details>
+<details class="sec" style="margin-bottom:18px">
+  <summary><h2>Reglas del programa que conviene conocer</h2></summary>
+  <ul class="sec-note" style="padding-left:34px;margin:0 0 8px;max-width:75ch">
+    <li><b>Pruebas de lectura y escritura</b> (quienes ingresaron desde 2025): la Prueba 1 se matricula en segundo semestre y debe aprobarse para cursar Análisis financiero; la Prueba 2, en cuarto, y es requisito de Economía política y desarrollo (quinto). Se aprueban con 3,5.</li>
+    <li><b>Idiomas:</b> Econometría 2 pide nivel 5 del Centro de Idiomas (A1), Talento II pide nivel 10 (A2) y el grado pide nivel 15 (B1).</li>
+    <li><b>Talento y práctica:</b> Talento I (tercer semestre) requiere Matemáticas financieras y es prerrequisito de Econometría 1. Talento II (séptimo) requiere Talento I y A2. La práctica pide Talento II, 95 créditos aprobados y Econometría 2.</li>
+    <li><b>Para graduarte:</b> aprobar los 148 créditos del programa, aprobar la práctica, el control de idioma (B1) y la prueba Saber Pro con un puntaje global por encima del percentil 50 nacional.</li>
+    <li><b>Doble programa:</b> se puede con 30 créditos aprobados y promedio acumulado mínimo de 3,4. Permite homologar materias y, con el aval del jefe de carrera, acreditar la misma línea de énfasis en los dos programas. Podría servir si piensas en Finanzas o Ciencias Políticas.</li>
+    <li><b>Las trayectorias son combinaciones sugeridas:</b> en los cursos de tópicos los temas cambian entre semestres; consulta con la jefatura del programa.</li>
+  </ul>
+  <p class="sec-note" style="padding-bottom:14px">Fuente: presentación "Parche con el jefe" del 21 de octubre de 2026. Las reglas pueden cambiar; verifica con la jefatura antes de decidir.</p>
 </details>
 <div id="sections"></div>
 
@@ -206,6 +221,18 @@ const T = {
   ['ei4','Economía política internacional (NI0339)','baja'],['ei5','Estudios internacionales comparados (NI0390)','baja'],['ei6','Teoría de las relaciones internacionales (NI0052)','baja']]}
 };
 /* El documento de trayectorias marca en verde las materias que ofrece el programa de Economía; solo de esas dice que puede garantizar la apertura. */
+
+/* Rutas sugeridas por la jefatura del programa (presentación "Parche con el jefe", 21 oct 2026). No cambian el cálculo: orientan la elección. */
+const INFO = {
+ EC:'<b>Orden sugerido:</b> Inferencia causal, Microeconometría, Macroeconometría y series de tiempo, y al final Tópicos en econometría avanzada. <b>Qué desarrollas:</b> capacidades avanzadas para analizar datos económicos, identificar relaciones causales y modelar fenómenos micro y macro con econometría aplicada a la toma de decisiones.',
+ MA:'<b>Orden sugerido:</b> siempre Inferencia causal primero; luego Tópicos en economía, y se suman Finanzas públicas y Economía experimental. <b>Qué desarrollas:</b> análisis económico aplicado: relaciones causales, comportamiento estratégico de empresas y mercados, intervención del Estado, evaluación de políticas y decisiones con métodos experimentales.',
+ CD:'<b>Tres rutas de 3 materias:</b> (1) Valoración de instrumentos financieros: Procesos estocásticos 1, luego 2, y Sistemas lineales o Análisis numérico. (2) Modelación matemática y simulación: Sistemas lineales, Modelación experimental y Análisis numérico (o Procesos estocásticos 1). (3) Optimización: Optimización 1, Optimización 2 y Análisis numérico (o Análisis 1).',
+ PP:'<b>Orden sugerido:</b> Administración pública, luego Análisis y diseño de políticas públicas, luego Instrumentos y evaluación; Gobernanza local es un complemento opcional. Otra materia de la trayectoria es Planeación y legislación. <b>Qué desarrollas:</b> cómo funciona el Estado y cómo diseñar, implementar y evaluar políticas públicas.',
+ EF:'<b>Rutas que muestra la jefatura (3 materias):</b> para una noción del mercado de valores, Renta fija, Renta variable y Estrategia financiera corporativa; para nociones de finanzas corporativas, Renta variable, Valoración de empresas y Estrategia financiera corporativa. Derivados complementa para quien quiere el énfasis completo. <b>Ojo:</b> las rutas de 3 materias son ejemplos de combinación; el mínimo para la micro-credencial (12 créditos, 4 materias) y su reconocimiento los define la jefatura de pregrado.',
+ GFR:'<b>Rutas:</b> (1) Planeación financiera, Métodos empíricos y Gestión de riesgos (planeación y gestión financiera). (2) Planeación financiera, Gestión de riesgos y Finanzas pensionales y seguros (riesgos y protección). (3) Planeación, Métodos empíricos, Gestión de riesgos y Finanzas pensionales (finanzas cuantitativas). (4) Planeación, Métodos empíricos, Gestión de riesgos y Ética y gobierno corporativo. También puedes tomar las cinco.',
+ EI:'<b>Nombre:</b> la presentación de la jefatura la llama "Relaciones internacionales (Inglés)". <b>Rutas de 3 materias:</b> diplomacia y política exterior colombiana (Derecho internacional público, Economía política internacional y Agenda internacional de Colombia) o decisiones frente a actores internacionales (las dos primeras y Gobernanza global). Se complementan con Estudios internacionales comparados (aquí se desarrolla un paper) y Teoría de las relaciones internacionales. <b>Ojo:</b> la etiqueta "(Inglés)" indica que tiene un requisito de inglés; consulta el nivel exigido con la jefatura. Las rutas de 3 materias son ejemplos; el mínimo para la micro-credencial es de 12 créditos (4 materias).',
+ GP:'<b>Rutas:</b> formulación y gestión (Preparación de proyectos, Gestión de proyectos y Análisis de riesgos); evaluación (Preparación de proyectos, Evaluación financiera de proyectos y Análisis de riesgos); o la ruta de 4 materias, que las combina. <b>Ojo:</b> las rutas de 3 materias son ejemplos de combinación; el mínimo para la micro-credencial es de 12 créditos (4 materias), y la jefatura de pregrado define su reconocimiento.'
+};
 const GARANT = new Set(['mf4001','ec2','ec3','ec4','ma2','ma3','ma4']);
 const CREDENCIALES =[['EF','GFR','Economía Financiera'],['EC','CD','Métodos y Análisis de Datos'],['MA','PP','Economía y Gobierno']];
 const MK_COMPL = 22.0;
@@ -232,20 +259,20 @@ const TD = {
  mf4001:'Métodos para estimar el efecto de una política o programa con datos (experimentos, diferencias en diferencias, variables instrumentales).',
  ec2:'Modelos para datos en el tiempo: pronóstico de inflación, PIB y otras series.',
  ec3:'Modelos para datos de personas y hogares: elección discreta, datos de panel.',
- ec4:'Temas avanzados de estimación; el contenido puede variar cada semestre.',
- ma2:'Temas aplicados de economía; el contenido puede variar cada semestre.',
+ ec4:'Metodologías y tendencias actuales de la econometría. Se han visto econometría espacial (considera la ubicación geográfica) y econometría bayesiana (incorpora información previa y la actualiza con los datos). Los temas cambian cada semestre: consulta con el jefe del programa.',
+ ma2:'Actualmente aborda organización industrial y permite incorporar otros temas aplicados según el mercado laboral. Los temas cambian cada semestre: consulta con el jefe del programa.',
  ma3:'Impuestos, gasto público, deuda y presupuesto del Estado.',
  ma4:'Experimentos con personas para estudiar cómo toman decisiones.',
- pp1:'Cómo se planea y se norma la acción del Estado: planes de desarrollo, leyes y presupuestos.',
+ pp1:'Cómo se planea y se norma la acción del Estado: planes de desarrollo, leyes y presupuestos. Combina derecho y ciencia política.',
  pp2:'Cómo funcionan y se gestionan las entidades del Estado.',
  pp3:'Del problema público a la política: alternativas, diseño y recomendación.',
  pp4:'Herramientas de política pública y cómo medir si funcionaron.',
  pp5:'Gobiernos locales, participación ciudadana y gestión del territorio.',
- ef1:'Opciones, futuros y swaps: cómo funcionan y cómo se valoran.',
+ ef1:'Opciones, futuros y swaps: cómo funcionan y cómo se valoran. Según la jefatura, complementa para quien quiere el énfasis completo: permite entender el mercado spot y el de futuros.',
  ef2:'Bonos y tasas de interés: valoración, duración y portafolios de renta fija.',
  ef3:'Acciones: valoración, portafolios y mercados bursátiles.',
  ef4:'Cuánto vale una empresa: flujos de caja descontados y múltiplos.',
- ef5:'Cómo una empresa decide inversión, deuda y dividendos.',
+ ef5:'Cómo una empresa decide inversión, deuda y dividendos. Es la materia de Finanzas que se enfoca en la empresa y se sugiere cursarla primero.',
  g1:'Presupuestos, proyecciones y planeación financiera de una empresa o una persona.',
  g2:'Medir y controlar riesgo de mercado, de crédito y de liquidez.',
  g3:'Pruebas estadísticas con datos de mercado: retornos, riesgo y anomalías.',
@@ -259,8 +286,8 @@ const TD = {
  ei2:'Reglas jurídicas entre Estados: tratados, organismos y solución de conflictos.',
  ei3:'Política exterior de Colombia, sus relaciones y temas actuales.',
  ei4:'Cómo se cruzan política y economía en el comercio, las finanzas y la cooperación global.',
- ei5:'Comparar países e instituciones: sistemas políticos y económicos.',
- ei6:'Escuelas teóricas para explicar el comportamiento de los Estados.'
+ ei5:'Comparar países e instituciones: sistemas políticos y económicos. Aquí se desarrolla un paper; sirve si buscas investigar.',
+ ei6:'Marcos teóricos que explican por qué los Estados responden de forma distinta a los asuntos globales.'
 };
 /* Materias del pénsum de los semestres 1 a 4, supuestas como ya cursadas (editable en la página). */
 const TAKEN_DEFAULT=['contab','mat1','iec','hist','pens','matfin','mat2','mac1','comp','anfin','mat3','mic1','prob','alg','comu','mic2','mac2','eco1'];
@@ -319,7 +346,7 @@ const JOBS = [
   ['j_w10','Universidad o centro de investigación',{EC:1,MA:.8}],
   ['j_w11','Empresa exportadora, aduana o logística internacional',{EI:1,GP:.4}],
   ['j_w12','Vivir y trabajar en otro país',{EI:1}]]},
- {g:'Cómo te imaginas tu periodo de práctica (semestre 8, 18 créditos; si ya lo hiciste, califica con tu experiencia)',items:[
+ {g:'Cómo te imaginas tu periodo de práctica (semestre 8, 18 créditos; requiere Talento II, 95 créditos aprobados y Econometría 2; si ya lo hiciste, califica con tu experiencia)',items:[
   ['j_x1','Me imagino haciendo mi práctica en un banco, una aseguradora o una comisionista',{GFR:1,EF:1}],
   ['j_x2','Me imagino haciendo mi práctica en una entidad pública (ministerio, alcaldía, planeación, banco central)',{PP:1,MA:.4,EC:.4}],
   ['j_x3','Me imagino haciendo mi práctica en un organismo internacional, una embajada o una ONG',{EI:1,PP:.6}],
@@ -357,8 +384,8 @@ const JOBS = [
 const JOBFLAT=JOBS.flatMap(g=>g.items);
 
 /* ===== Estado ===== */
-let R = {}; let W = 70;
-try{const s=localStorage.getItem('tt_r'); if(s) R=JSON.parse(s)||{}; const w=localStorage.getItem('tt_w'); if(w) W=+w||70;}catch(e){}
+let R = {}; let W = 70; let UNK = {};
+try{const s=localStorage.getItem('tt_r'); if(s) R=JSON.parse(s)||{}; const w=localStorage.getItem('tt_w'); if(w) W=+w||70; const u=localStorage.getItem('tt_u'); if(u) UNK=JSON.parse(u)||{};}catch(e){}
 /* Semestre del pénsum 2024-2 en que se ve cada materia */
 const SEM={contab:1,mat1:1,iec:1,hist:1,pens:2,matfin:2,mat2:2,mac1:2,comp:2,anfin:3,mat3:3,mic1:3,prob:3,alg:3,comu:4,mic2:4,mac2:4,eco1:4,mic3:5,mac3:5,eco2:5,epd:5,datos:5,mic4:6,comport:6,eint:6,finban:6,hcol:7};
 const takenFor=s=>new Set(Object.keys(SEM).filter(k=>SEM[k]<s));
@@ -366,7 +393,7 @@ let SEMV=5;
 let TAKEN=takenFor(SEMV);
 try{const v=localStorage.getItem('tt_s'); if(v){SEMV=+v||5; TAKEN=takenFor(SEMV);} const s=localStorage.getItem('tt_t'); if(s) TAKEN=new Set(JSON.parse(s));}catch(e){}
 const PRIV=/mercado/i.test(location.hash||''); if(PRIV) document.body.classList.add('showmkt'); else W=100;
-const save=()=>{try{localStorage.setItem('tt_r',JSON.stringify(R));localStorage.setItem('tt_w',String(W));localStorage.setItem('tt_t',JSON.stringify([...TAKEN]));localStorage.setItem('tt_s',String(SEMV));}catch(e){}};
+const save=()=>{try{localStorage.setItem('tt_r',JSON.stringify(R));localStorage.setItem('tt_u',JSON.stringify(UNK));if(PRIV)localStorage.setItem('tt_w',String(W));localStorage.setItem('tt_t',JSON.stringify([...TAKEN]));localStorage.setItem('tt_s',String(SEMV));}catch(e){}};
 const tookHTML=id=>`<label class="took" for="took_${id}"><input type="checkbox" data-took="${id}" id="took_${id}"${TAKEN.has(id)?' checked':''}>ya la cursé</label>`;
 
 /* ===== Render del test ===== */
@@ -374,7 +401,7 @@ const allIds=new Set();
 function rateHTML(id){
   let h='<div class="rate" role="radiogroup" aria-label="Calificación">';
   for(let v=1;v<=5;v++) h+=`<label><input type="radio" name="q_${id}" id="q_${id}_${v}" value="${v}" data-id="${id}"${R[id]===v?' checked':''}><span>${v}</span></label>`;
-  return h+`<button type="button" data-clear="${id}" title="Quitar respuesta" aria-label="Quitar respuesta">×</button></div>`;
+  return h+`<button type="button" class="unk${UNK[id]?' on':''}" data-unk="${id}" title="No la conozco o no la entiendo" aria-label="No la conozco o no la entiendo">No sé</button><button type="button" data-clear="${id}" title="Quitar respuesta" aria-label="Quitar respuesta">×</button></div>`;
 }
 function row(id,name,extra){allIds.add(id);return `<div class="row"><div class="nm">${name}${extra||''}</div>${rateHTML(id)}</div>`;}
 function section(key,title,note,body,ids){
@@ -396,8 +423,8 @@ function build(){
   for(const k of ['EF','GFR','EI','PP','GP','EC','MA','CD']){
     const t=T[k]; ids=[]; b='';
     t.c.forEach(([id,nm,q])=>{ids.push(id); if(seen.has(id)) return; seen.add(id); b+=row(id,nm,`<span class="tag ${q}">carga mat. ${q}</span>`+(GARANT.has(id)?'<span class="tag">apertura garantizada</span>':'')+(TD[id]?`<span class="desc">${TD[id]}</span>`:''));});
-    const note = t.req<t.c.length ? `Son ${t.cr} créditos de ${t.c.length} materias de 3 créditos, así que cursarías ${t.req} (cuenta inferida de los créditos; confírmala con tu programa).` : `Cursas las ${t.c.length} (${t.cr} créditos).`;
-    html+=section(k,`${n++}. ${t.n}`,note+(k==='MA'?' Inferencia causal se califica en Economía Cuantitativa.':''),b,ids);
+    const note = t.req<t.c.length ? `Son ${t.cr} créditos: el mínimo para la micro-credencial es de ${t.req} materias de 3 créditos (hay ${t.c.length} para elegir) y puedes cursar más si quieres. La jefatura de pregrado define qué combinaciones valen como micro-credencial.` : `Cursas las ${t.c.length} (${t.cr} créditos).`;
+    html+=section(k,`${n++}. ${t.n}`,note+(k==='MA'?' Inferencia causal se califica en Economía Cuantitativa.':'')+(INFO[k]?'<br><br>'+INFO[k]:''),b,ids);
     if(k==='EC'){/* MF4001 aparece aquí; MA lo reutiliza */}
   }
   // si MA se renderiza antes que EC, MF4001 queda en MA; ya cubierto por 'seen'
@@ -460,7 +487,7 @@ function plans(){
     });
     courses=courses.filter((c,i,a)=>a.findIndex(x=>x.nm===c.nm)===i);
     const interest=sum/credits; const i100=(interest-1)/4*100; const market=mk/credits;
-    out.push({name,badge,i100,market,courses,interest});
+    out.push({name,badge,i100,market,courses,interest,keys:parts.filter(p=>p.k).map(p=>p.k)});
   };
   const nine=['CD','PP','GFR'], twelve=['EC','MA','EF','GP','EI'];
   nine.forEach(a=>twelve.forEach(b=>{
@@ -474,8 +501,9 @@ function plans(){
     finish(`${T[nine[i]].n} (9) + ${T[nine[j]].n} (9) + 1 complementaria`,[{k:nine[i]},{k:nine[j]},{items:best(null,1)}],null);
   for(let i=0;i<twelve.length;i++)for(let j=i+1;j<twelve.length;j++){
     const shared=(twelve[i]==='EC'&&twelve[j]==='MA')||(twelve[i]==='MA'&&twelve[j]==='EC');
-    if(!shared) continue; /* dos micro de 12 suman 24 créditos: se excluyen salvo EC+MA, que comparten una materia */
-    finish(`${T[twelve[i]].n} (12) + ${T[twelve[j]].n} (12)`,[{k:twelve[i]},{k:twelve[j],cr:9}],'Comparten Inferencia causal: suman 21 créditos');
+    /* dos micro de 12 suman 24 créditos (permitido: el mínimo es 21); EC+MA comparten Inferencia causal y suman 21 */
+    if(shared) finish(`${T[twelve[i]].n} (12) + ${T[twelve[j]].n} (12)`,[{k:twelve[i]},{k:twelve[j],cr:9}],'Comparten Inferencia causal: suman 21 créditos');
+    else finish(`${T[twelve[i]].n} (12) + ${T[twelve[j]].n} (12)`,[{k:twelve[i]},{k:twelve[j]}],'Dos de 12: suman 24 créditos (3 más que el mínimo de 21; los créditos adicionales cambian el costo de la matrícula)');
   }
   out.forEach(p=>p.final=W/100*p.i100+(1-W/100)*p.market);
   out.sort((a,b)=>b.final-a.final);
@@ -489,6 +517,7 @@ function coursesHTML(cs){
   return '<ul class="cl">'+cs.map(c=>`<li><em class="r${c.r==null?0:c.r}">${c.r==null?'?':c.r}</em><span>${esc(c.nm)}</span></li>`).join('')+'</ul>';
 }
 function render(){
+  document.querySelectorAll('[data-took]').forEach(c=>{c.checked=TAKEN.has(c.dataset.took);});
   const total=allIds.size; const done=[...allIds].filter(id=>R[id]!=null).length;
   document.getElementById('pbar').style.width=(total?done/total*100:0)+'%';
   document.getElementById('pcount').textContent=`${done} de ${total} respondidas`;
@@ -511,11 +540,34 @@ function render(){
    <h3>${esc(top.name)}</h3>${top.badge?`<span class="badge">${esc(top.badge)}</span>`:''}</div><div class="score">${f1(top.final)}</div></div>
    <div class="split"><span>Afinidad con tus gustos: <b>${f1(top.i100)}</b>/100</span><span class="priv">Mercado laboral: <b>${f1(top.market)}</b>/100</span></div>
    <div class="note" style="margin-bottom:4px">Materias que cursarías (tu calificación a la izquierda):</div>${coursesHTML(top.courses)}</div>`;
+  h+=`<p class="note" style="margin:10px 0"><b>Recuerda:</b> este resultado es un consejo. La decisión final de tomar una trayectoria o complementarias es tuya y depende de tu criterio.</p>`;
+  // aviso de confianza
+  {
+    const pct=done/total, uk=Object.keys(UNK).length;
+    const weak=(top.keys||[]).filter(k=>MI[k].known<T[k].req).map(k=>T[k].n);
+    const msgs=[];
+    if(pct<0.5) msgs.push(`Respondiste ${done} de ${total} preguntas (${Math.round(pct*100)}%). Lo ideal es completar todo el test: con pocas respuestas el resultado es poco fiable.`);
+    if(weak.length) msgs.push(`Poca información en tu mejor opción: <b>${weak.map(esc).join(', ')}</b> (calificaste menos materias de las que exige cada micro-credencial; las que faltan se toman como neutras).`);
+    if(uk) msgs.push(`Marcaste "No sé" en ${uk} pregunta${uk>1?'s':''}: no cuentan, y conviene informarte sobre ellas antes de decidir.`);
+    if(msgs.length) h+=`<div class="note" style="border-left:3px solid var(--accent);padding:8px 12px;margin:12px 0"><b>Qué tan confiable es este resultado</b><br>${msgs.join('<br>')}</div>`;
+  }
+  // explicación del mejor plan
+  {
+    const ks=top.keys||[];
+    const parts=ks.map(k=>{
+      const m=MI[k]; const t=T[k];
+      const cs=m.pick.map(x=>`${esc(x.nm)} (${x.r})`).join(', ')||'sin materias calificadas';
+      const js=JOBFLAT.filter(([id,nm,w])=>R[id]!=null&&R[id]>=4&&w[k]>=0.5).sort((a,b)=>R[b[0]]*b[2][k]-R[a[0]]*a[2][k]).slice(0,4).map(x=>`${esc(x[1])} (${R[x[0]]})`).join('; ');
+      const lo=JOBFLAT.filter(([id,nm,w])=>R[id]!=null&&R[id]<=2&&w[k]>=0.5).slice(0,3).map(x=>`${esc(x[1])} (${R[x[0]]})`).join('; ');
+      return `<p><b>${esc(t.n)}</b><br>Materias que más pesaron: ${cs}.${js?`<br>Cargos o tareas que marcaste alto y se relacionan: ${js}.`:''}${lo?`<br>Te restaron: ${lo}.`:''}</p>`;
+    }).join('');
+    if(parts) h+=`<details style="margin-top:10px"><summary style="cursor:pointer;color:var(--accent);font-weight:600">¿Por qué salió esto?</summary><div class="note" style="margin-top:8px">Esto es lo que más empujó tu mejor opción (entre paréntesis, tu calificación):</div>${parts}</details>`;
+  }
   h+='<h3 style="font-family:var(--f-display);font-size:19px;margin:22px 0 4px">Las siguientes cuatro</h3>';
   out.slice(1,5).forEach((p,i)=>{
     h+=`<details class="mini" style="display:block"><summary style="cursor:pointer;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap"><span><b>${i+2}. ${esc(p.name)}</b>${p.badge?` <span class="badge">${esc(p.badge)}</span>`:''}</span><span class="note">Afinidad ${f1(p.i100)}<span class="priv"> · total ${f1(p.final)} · mercado ${f1(p.market)}</span></span></summary>${coursesHTML(p.courses)}</details>`;
   });
-  h+=`<details style="margin-top:12px"><summary style="cursor:pointer;color:var(--accent);font-weight:600">Ver los ${out.length} planes</summary><div class="tw" style="margin-top:8px"><table><thead><tr><th>#</th><th>Plan de 21 créditos</th><th class="n">Afinidad</th><th class="n priv">Mercado</th><th class="n priv">Total</th></tr></thead><tbody>`+
+  h+=`<details style="margin-top:12px"><summary style="cursor:pointer;color:var(--accent);font-weight:600">Ver los ${out.length} planes</summary><div class="tw" style="margin-top:8px"><table><thead><tr><th>#</th><th>Plan</th><th class="n">Afinidad</th><th class="n priv">Mercado</th><th class="n priv">Total</th></tr></thead><tbody>`+
     out.map((p,i)=>`<tr><td>${i+1}</td><td>${esc(p.name)}</td><td class="n">${f1(p.i100)}</td><td class="n priv">${f1(p.market)}</td><td class="n priv"><b>${f1(p.final)}</b></td></tr>`).join('')+`</tbody></table></div></details>`;
   // micro ranking
   const ms=Object.keys(T).map(k=>{const m=MI[k];const i100=(m.val-1)/4*100;return {k,i100,j:m.ji==null?null:(m.ji-1)/4*100,mk:T[k].mk,f:W/100*i100+(1-W/100)*T[k].mk,known:m.known,req:T[k].req};}).sort((a,b)=>b.f-a.f);
@@ -539,12 +591,12 @@ function render(){
    'cada complementaria vale 3 créditos; el documento no lo indica y excluí el "Curso proyecto de 1 crédito"',
    'el documento de trayectorias solo dice que puede garantizar la apertura de las materias de Economía Cuantitativa y Microeconomía Aplicada; confirma la oferta del resto',
    'los planes con créditos libres valoran las complementarias con el promedio de todas las que calificaste, y las que se muestran como sugeridas son tus mejores',
-   'no se comparan planes de dos micro-credenciales de 12 créditos (24 créditos), salvo Economía Cuantitativa con Microeconomía Aplicada, que comparten una materia y suman 21 (en ese plan la segunda cuenta 9 créditos)',
+   'el mínimo es 21 créditos, pero se incluyen los planes con dos micro-credenciales de 12 (24 créditos), que quedan 3 por encima del mínimo y cambian el costo de la matrícula; Economía Cuantitativa con Microeconomía Aplicada comparten una materia y suman 21 (en ese plan la segunda cuenta 9 créditos)',
    'en las micro-credenciales donde eliges menos materias de las que ofrecen (Ciencia de Datos, Políticas públicas, Finanzas, Gestión financiera y riesgo y Estudios Internacionales), la afinidad promedia tus mejores materias con el promedio de todas las que calificaste (con menos peso a tus favoritas cuanto más materias haya para elegir), porque las favoritas por el nombre pueden no abrirse o decepcionar',
    'el ranking mide afinidad, no salario ni empleo: úsalo junto con otras fuentes, y verifica prerrequisitos y oferta en el programa'];
   if(PRIV) lims.splice(1,0,'las complementarias sin trayectoria valen 22 en mercado','el puntaje de mercado depende de los 98 cargos reunidos, que no son un censo del mercado laboral, y favorece a las trayectorias con más cargos registrados');
-  h+=`<p class="note" style="margin-top:14px">Cómo se calcula: la afinidad de cada micro-credencial mezcla tus calificaciones de sus materias (60%; en las que ofrecen más materias de las que debes cursar se toman tus mejores), de los cargos, tareas y lugares de trabajo con los que se relaciona (25%, "Mundo real"; los pesos de esa relación son criterio de quien armó el test) y de las materias del pénsum relacionadas (15%; las que ya cursaste pesan 1 y las que no, 0,4). La afinidad de un plan es el promedio de sus micro-credenciales ponderado por créditos.${PRIV?' El puntaje de mercado viene de un análisis comparativo de 98 cargos (cobertura de cargos, salario y perspectiva de futuro, escenario equilibrado). Es una estimación de quien armó el test, no una cifra oficial.':''} Supuestos y límites: ${lims.map((x,n)=>'('+(n+1)+') '+x).join('; ')}. Es una guía, no una predicción de tu futuro.</p>`;
-  h+=`<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="copy">Copiar mi resumen</button><button class="btn ghost" id="reset">Borrar mis respuestas</button></div><textarea id="sum" hidden readonly aria-label="Resumen"></textarea>`;
+  h+=`<p class="note" style="margin-top:14px">Cómo se calcula: la afinidad de cada micro-credencial mezcla tus calificaciones de sus materias (60%; en las que ofrecen más materias de las que debes cursar se toman tus mejores), de los cargos, tareas y lugares de trabajo con los que se relaciona (25%, "Mundo real"; los pesos de esa relación son criterio de quien armó el test) y de las materias del pénsum relacionadas (15%; las que ya cursaste pesan 1 y las que no, 0,4). La afinidad de un plan es el promedio de sus micro-credenciales ponderado por créditos.${PRIV?' El puntaje de mercado viene de un análisis comparativo de 98 cargos (cobertura de cargos, salario y perspectiva de futuro, escenario equilibrado). Es una estimación de quien armó el test, no una cifra oficial.':''} Supuestos y límites: ${lims.map((x,n)=>'('+(n+1)+') '+x).join('; ')}. La decisión final de tomar una trayectoria o materias complementarias es tuya y depende de tu propio criterio; este test es un consejo y una recomendación, no una resolución definitiva ni una predicción de tu futuro; puedes reevaluarte cuando quieras, y la jefatura de pregrado valida las combinaciones.</p>`;
+  h+=`<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="copy">Copiar mi resumen</button><button class="btn ghost" id="img">Descargar como imagen</button><button class="btn ghost" id="reset">Borrar mis respuestas</button></div><textarea id="sum" hidden readonly aria-label="Resumen"></textarea>`;
   box.innerHTML=h;
   document.getElementById('copy').addEventListener('click',()=>{
     const names={};JOBFLAT.forEach(([i,n])=>names[i]=n);PEN.forEach(g=>g.items.forEach(([i,n])=>names[i]=n));Object.values(T).forEach(t=>t.c.forEach(([i,n])=>names[i]=n));COMPL.forEach(g=>g.items.forEach(([i,n])=>names[i]=n));
@@ -555,19 +607,46 @@ function render(){
     const ta=document.getElementById('sum');ta.value=s;ta.hidden=false;ta.select();
     try{navigator.clipboard.writeText(s).catch(()=>{});}catch(e){}
   });
-  document.getElementById('reset').addEventListener('click',()=>{R={};save();build();bind();render();});
+  const rb=document.getElementById('reset'); let armed=false;
+  rb.addEventListener('click',()=>{
+    if(!armed){armed=true; rb.textContent='¿Seguro? Pulsa otra vez para borrar todo'; setTimeout(()=>{armed=false; if(rb.isConnected) rb.textContent='Borrar mis respuestas';},4000); return;}
+    R={}; UNK={}; SEMV=5; TAKEN=takenFor(5); if(!PRIV) W=100; save(); build(); bind(); render(); window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('img').addEventListener('click',()=>shareImage(out));
 }
 function bind(){
   const root=document.getElementById('sections');
   root.onchange=e=>{const t=e.target;
     if(t.id==='sem'){ SEMV=+t.value; TAKEN=takenFor(SEMV); save(); build(); bind(); render(); return; }
     if(t.dataset&&t.dataset.took){ if(t.checked) TAKEN.add(t.dataset.took); else TAKEN.delete(t.dataset.took); save(); render(); return; }
-    if(t.dataset&&t.dataset.id){R[t.dataset.id]=+t.value; syncDup(t.dataset.id); save(); render();}};
-  root.onclick=e=>{const id=e.target.dataset&&e.target.dataset.clear; if(id){delete R[id]; root.querySelectorAll(`input[name="q_${id}"]`).forEach(i=>i.checked=false); save(); render();}};
+    if(t.dataset&&t.dataset.id){R[t.dataset.id]=+t.value; delete UNK[t.dataset.id]; const ub=root.querySelector(`[data-unk="${t.dataset.id}"]`); if(ub) ub.classList.remove('on'); save(); render();}};
+  root.onclick=e=>{const d=e.target.dataset||{};
+    if(d.clear){const id=d.clear; delete R[id]; delete UNK[id]; root.querySelectorAll(`input[name="q_${id}"]`).forEach(i=>i.checked=false); const ub=root.querySelector(`[data-unk="${id}"]`); if(ub) ub.classList.remove('on'); save(); render();}
+    if(d.unk){const id=d.unk; delete R[id]; UNK[id]=1; root.querySelectorAll(`input[name="q_${id}"]`).forEach(i=>i.checked=false); e.target.classList.add('on'); save(); render();}};
+}
+function shareImage(out){
+  const c=document.createElement('canvas'); c.width=1080; c.height=1080; const x=c.getContext('2d');
+  const cs=getComputedStyle(document.body);
+  x.fillStyle='#fbf8f3'; x.fillRect(0,0,1080,1080);
+  x.fillStyle='#1d2a3a'; x.font='700 52px Georgia,serif'; x.fillText('¿Qué trayectoria es para ti?',60,110);
+  x.fillStyle='#6b7280'; x.font='28px sans-serif'; x.fillText('Mi afinidad según el test (consejo, no resolución definitiva)',60,160);
+  const items=out.slice(0,5);
+  items.forEach((p,i)=>{
+    const y=240+i*150;
+    x.fillStyle=i===0?'#1d4e89':'#e6e1d8'; x.beginPath(); x.roundRect?x.roundRect(60,y,960,120,16):x.rect(60,y,960,120); x.fill();
+    x.fillStyle=i===0?'#fff':'#1d2a3a'; x.font='700 34px sans-serif';
+    let nm=(i+1)+'. '+p.name; while(x.measureText(nm).width>730&&nm.length>10) nm=nm.slice(0,-2);
+    if(nm!==(i+1)+'. '+p.name) nm+='…';
+    x.fillText(nm,90,y+52);
+    x.font='26px sans-serif'; x.fillText('Afinidad',90,y+95);
+    x.font='700 52px sans-serif'; x.textAlign='right'; x.fillText(f1(p.i100),990,y+78); x.textAlign='left';
+  });
+  x.fillStyle='#6b7280'; x.font='22px sans-serif'; x.fillText('Es solo un consejo: la decisión final es de cada persona.',60,1040);
+  c.toBlob(b=>{const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='mi-trayectoria.png'; document.body.appendChild(a); a.click(); a.remove();},'image/png');
 }
 function syncDup(){}
 document.getElementById('w').addEventListener('input',e=>{W=+e.target.value;save();render();});
 build(); bind(); render();
+window.addEventListener('pageshow',e=>{if(e.persisted){build();bind();render();}});
 </script>
 
 </body>
