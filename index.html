@@ -162,20 +162,6 @@ textarea{width:100%;min-height:150px;background:var(--surface);color:var(--ink);
     </tbody></table></div>
     <p class="sec-note" style="padding-bottom:14px">Qué significa para el mundo profesional: con la micro-credencial de Finanzas verías las mismas materias centrales que un egresado de Finanzas, que cursa además tesorería, modelación financiera y derecho financiero. Con Estudios Internacionales o Políticas públicas, las mismas que un politólogo, que además estudia sociología, derecho y métodos cualitativos. Tu ventaja como economista está en teoría económica, macro y econometría. Un dato útil si la econometría te preocupa: Finanzas también exige Econometría 1 y 2 a todos sus estudiantes. Los tres programas comparten Talento I y II y un periodo de práctica de 18 créditos en el semestre 8. En los planes de Finanzas y Ciencias Políticas las complementarias son casi todas de 3 créditos, con algunas de 1 y 2; eso apoya el supuesto de 3 créditos para las tuyas, aunque el documento de tu plan no lo indique.</p>
   </details>
-  <details class="sec priv" style="margin-top:14px">
-    <summary><h2>Cómo se armó este test y de dónde salen los datos</h2></summary>
-    <p class="sec-note">El puntaje de mercado de cada micro-credencial resume 98 cargos que puede ejercer un economista (62 en Colombia y 36 en el exterior), con su salario y la trayectoria que más se acerca a cada uno. Cada cifra lleva un nivel de confianza: oficial directo, oficial por analogía, referencia de mercado publicada o estimación propia. Estas son las fuentes:</p>
-    <ul class="sec-note" style="padding-left:34px;margin:0 0 8px">
-      <li>Colombia: decretos salariales del sector público de 2026 (Función Pública), estructura salarial del Banco de la República, SMMLV 2026, DANE (mercado laboral a septiembre de 2026) y el Observatorio Laboral para la Educación (MinEducación).</li>
-      <li>Exterior: Occupational Outlook Handbook del BLS de EE. UU. (datos de mayo de 2025), escala salarial del FMI vigente desde mayo de 2026, escalas del Grupo Banco Mundial (año fiscal 2027), escala de la ONU de enero de 2026, escala 2024 de BID Invest y una oferta del Banco Central Europeo.</li>
-      <li>Perspectiva de futuro: informe Future of Jobs 2025 del Foro Económico Mundial y proyecciones del BLS.</li>
-      <li>Conversión a pesos con la TRM del 15 de octubre de 2026 ($3.197,65 por dólar).</li>
-    </ul>
-    <div class="tw" style="margin:0 16px 12px"><table><thead><tr><th>Micro-credencial</th><th class="n">Puntaje de mercado (0 a 100)</th></tr></thead><tbody>
-      <tr><td>Economía Cuantitativa (12)</td><td class="n">86,9</td></tr><tr><td>Finanzas (12)</td><td class="n">85,3</td></tr><tr><td>Gestión financiera y riesgo (9)</td><td class="n">72,8</td></tr><tr><td>Microeconomía Aplicada (12)</td><td class="n">71,3</td></tr><tr><td>Ciencia de Datos (9)</td><td class="n">70,3</td></tr><tr><td>Políticas públicas (9)</td><td class="n">70,3</td></tr><tr><td>Gerencia de proyectos (12)</td><td class="n">59,3</td></tr><tr><td>Estudios Internacionales (12)</td><td class="n">53,7</td></tr>
-    </tbody></table></div>
-    <p class="sec-note" style="padding-bottom:14px">Ese puntaje combina cuántos cargos se relacionan con la trayectoria, su salario y una valoración subjetiva de su futuro (de 1 a 5). Ningún salario está garantizado. De los 62 cargos de Colombia, 23 tienen cifra oficial directa o por analogía, 16 son referencias de mercado y 23 son estimaciones propias. Al probar otras formas de calcular el salario (mediana, solo salario de entrada, solo cifras no estimadas), Economía Cuantitativa y Finanzas se mantienen arriba, pero el orden de los demás cambia: las diferencias entre los puestos 3 y 8 son pequeñas y no deben leerse como una jerarquía firme. Las trayectorias con menos cargos registrados salen más bajas aunque abran puertas importantes, sobre todo si piensas hacer un posgrado. Las materias y trayectorias vienen del pénsum 2024-2 y del documento de trayectorias flexibles 2026; confirma con tu programa si aplican a tu cohorte. Esta herramienta la armó un estudiante de Economía con ayuda de Claude, un asistente de inteligencia artificial. No es una herramienta oficial de EAFIT. Tus respuestas no se envían a nadie: se guardan solo en tu navegador.</p>
-  </details>
 </section>
 </div>
 
@@ -198,25 +184,25 @@ const PEN = [
   ['finban','Economía financiera y bancaria'],['comu','Comunicación efectiva para economía y finanzas']]}
 ];
 const T = {
- CD:{n:'Ciencia de Datos',cr:9,req:3,mk:70.3,rel:['mat3','alg','prob','comp','datos'],c:[
+ CD:{n:'Ciencia de Datos',cr:9,req:3,mk:0,rel:['mat3','alg','prob','comp','datos'],c:[
   ['cd1','Procesos estocásticos 1','alta'],['cd2','Procesos estocásticos 2','alta'],['cd3','Optimización 1','alta'],['cd4','Optimización II','alta'],
   ['cd5','Sistemas lineales','alta'],['cd6','Modelación experimental','media'],['cd7','Análisis I','alta'],['cd8','Análisis numérico','alta']]},
- EC:{n:'Economía Cuantitativa',cr:12,req:4,mk:86.9,rel:['eco1','eco2','prob','mat3','datos'],c:[
+ EC:{n:'Economía Cuantitativa',cr:12,req:4,mk:0,rel:['eco1','eco2','prob','mat3','datos'],c:[
   ['mf4001','Inferencia causal (MF4001)','alta'],['ec2','Macroeconometría y series de tiempo (MF4002)','alta'],['ec3','Microeconometría (MF4003)','alta'],['ec4','Tópicos en econometría avanzada (MF3006)','alta']]},
- MA:{n:'Microeconomía Aplicada',cr:12,req:4,mk:71.3,rel:['mic1','mic2','mic3','mic4'],c:[
+ MA:{n:'Microeconomía Aplicada',cr:12,req:4,mk:0,rel:['mic1','mic2','mic3','mic4'],c:[
   ['mf4001','Inferencia causal (MF4001)','alta'],['ma2','Tópicos en economía (MF4004)','media'],['ma3','Finanzas públicas (EC0276)','baja'],['ma4','Economía experimental (MF3011)','media']]},
- PP:{n:'Políticas públicas',cr:9,req:3,mk:70.3,rel:['epd','hcol','iec','mic4'],c:[
+ PP:{n:'Políticas públicas',cr:9,req:3,mk:0,rel:['epd','hcol','iec','mic4'],c:[
   ['pp1','Planeación y legislación (GP0022)','baja'],['pp2','Administración pública (PD2005)','baja'],['pp3','Análisis y diseño de políticas públicas (GP0060)','baja'],
   ['pp4','Instrumentos y evaluación de políticas públicas (PD3003)','baja'],['pp5','Gobernanza local (PD3007)','baja']]},
- EF:{n:'Finanzas',cr:12,req:4,mk:85.3,rel:['finban','anfin','matfin','comport','contab'],c:[
+ EF:{n:'Finanzas',cr:12,req:4,mk:0,rel:['finban','anfin','matfin','comport','contab'],c:[
   ['ef1','Instrumentos financieros: derivados (FI0155)','alta'],['ef2','Instrumentos financieros de renta fija (FI0156)','media'],['ef3','Instrumentos financieros de renta variable (FI0157)','media'],
   ['ef4','Valoración de empresas (FI0158)','media'],['ef5','Estrategia financiera corporativa (FI0144)','media']]},
- GFR:{n:'Gestión financiera y riesgo',cr:9,req:3,mk:72.8,rel:['anfin','finban','matfin','prob','contab'],c:[
+ GFR:{n:'Gestión financiera y riesgo',cr:9,req:3,mk:0,rel:['anfin','finban','matfin','prob','contab'],c:[
   ['g1','Planeación financiera (FI0143)','media'],['g2','Gestión de riesgos financieros (FI0165)','alta'],['g3','Métodos empíricos en finanzas (FI0162)','alta'],
   ['g4','Finanzas pensionales y seguros (FI0167)','media'],['g5','Ética y gobierno corporativo (FI0145)','baja']]},
- GP:{n:'Gerencia de proyectos',cr:12,req:4,mk:59.3,rel:['comu','mic3','contab','anfin'],c:[
+ GP:{n:'Gerencia de proyectos',cr:12,req:4,mk:0,rel:['comu','mic3','contab','anfin'],c:[
   ['gp1','Preparación de proyectos (OG0260)','baja'],['gp2','Gestión de proyectos (OG0264)','baja'],['gp3','Evaluación financiera de proyectos (OG0261)','media'],['gp4','Análisis de riesgos (OG0263)','media']]},
- EI:{n:'Estudios Internacionales (Inglés)',cr:12,req:4,mk:53.7,rel:['eint','epd','hist'],c:[
+ EI:{n:'Estudios Internacionales (Inglés)',cr:12,req:4,mk:0,rel:['eint','epd','hist'],c:[
   ['ei1','Gobernanza global (NI0262)','baja'],['ei2','Derecho internacional público (NI0266)','baja'],['ei3','Agenda internacional de Colombia (NI0338)','baja'],
   ['ei4','Economía política internacional (NI0339)','baja'],['ei5','Estudios internacionales comparados (NI0390)','baja'],['ei6','Teoría de las relaciones internacionales (NI0052)','baja']]}
 };
@@ -235,7 +221,7 @@ const INFO = {
 };
 const GARANT = new Set(['mf4001','ec2','ec3','ec4','ma2','ma3','ma4']);
 const CREDENCIALES =[['EF','GFR','Economía Financiera'],['EC','CD','Métodos y Análisis de Datos'],['MA','PP','Economía y Gobierno']];
-const MK_COMPL = 22.0;
+const MK_COMPL = 0;
 const COMPL = [
  {g:'Matemáticas y métodos',items:['Metodologías para la solución de problemas','Análisis II','Ecuaciones diferenciales','Métodos cuantitativos','Teoría de probabilidades (Ingeniería Matemática)','Costos para toma de decisiones']},
  {g:'Finanzas y economía',items:['Simulación financiera','Gestión bancaria','Valoración de derivados','Finanzas y sostenibilidad','Economía del sector público','Derecho y economía']},
@@ -392,7 +378,7 @@ const takenFor=s=>new Set(Object.keys(SEM).filter(k=>SEM[k]<s));
 let SEMV=5;
 let TAKEN=takenFor(SEMV);
 try{const v=localStorage.getItem('tt_s'); if(v){SEMV=+v||5; TAKEN=takenFor(SEMV);} const s=localStorage.getItem('tt_t'); if(s) TAKEN=new Set(JSON.parse(s));}catch(e){}
-const PRIV=/mercado/i.test(location.hash||''); if(PRIV) document.body.classList.add('showmkt'); else W=100;
+const PRIV=false; if(PRIV) document.body.classList.add('showmkt'); else W=100;
 const save=()=>{try{localStorage.setItem('tt_r',JSON.stringify(R));localStorage.setItem('tt_u',JSON.stringify(UNK));if(PRIV)localStorage.setItem('tt_w',String(W));localStorage.setItem('tt_t',JSON.stringify([...TAKEN]));localStorage.setItem('tt_s',String(SEMV));}catch(e){}};
 const tookHTML=id=>`<label class="took" for="took_${id}"><input type="checkbox" data-took="${id}" id="took_${id}"${TAKEN.has(id)?' checked':''}>ya la cursé</label>`;
 
@@ -594,8 +580,7 @@ function render(){
    'el mínimo es 21 créditos, pero se incluyen los planes con dos micro-credenciales de 12 (24 créditos), que quedan 3 por encima del mínimo y cambian el costo de la matrícula; Economía Cuantitativa con Microeconomía Aplicada comparten una materia y suman 21 (en ese plan la segunda cuenta 9 créditos)',
    'en las micro-credenciales donde eliges menos materias de las que ofrecen (Ciencia de Datos, Políticas públicas, Finanzas, Gestión financiera y riesgo y Estudios Internacionales), la afinidad promedia tus mejores materias con el promedio de todas las que calificaste (con menos peso a tus favoritas cuanto más materias haya para elegir), porque las favoritas por el nombre pueden no abrirse o decepcionar',
    'el ranking mide afinidad, no salario ni empleo: úsalo junto con otras fuentes, y verifica prerrequisitos y oferta en el programa'];
-  if(PRIV) lims.splice(1,0,'las complementarias sin trayectoria valen 22 en mercado','el puntaje de mercado depende de los 98 cargos reunidos, que no son un censo del mercado laboral, y favorece a las trayectorias con más cargos registrados');
-  h+=`<p class="note" style="margin-top:14px">Cómo se calcula: la afinidad de cada micro-credencial mezcla tus calificaciones de sus materias (60%; en las que ofrecen más materias de las que debes cursar se toman tus mejores), de los cargos, tareas y lugares de trabajo con los que se relaciona (25%, "Mundo real"; los pesos de esa relación son criterio de quien armó el test) y de las materias del pénsum relacionadas (15%; las que ya cursaste pesan 1 y las que no, 0,4). La afinidad de un plan es el promedio de sus micro-credenciales ponderado por créditos.${PRIV?' El puntaje de mercado viene de un análisis comparativo de 98 cargos (cobertura de cargos, salario y perspectiva de futuro, escenario equilibrado). Es una estimación de quien armó el test, no una cifra oficial.':''} Supuestos y límites: ${lims.map((x,n)=>'('+(n+1)+') '+x).join('; ')}. La decisión final de tomar una trayectoria o materias complementarias es tuya y depende de tu propio criterio; este test es un consejo y una recomendación, no una resolución definitiva ni una predicción de tu futuro; puedes reevaluarte cuando quieras, y la jefatura de pregrado valida las combinaciones.</p>`;
+  h+=`<p class="note" style="margin-top:14px">Cómo se calcula: la afinidad de cada micro-credencial mezcla tus calificaciones de sus materias (60%; en las que ofrecen más materias de las que debes cursar se toman tus mejores), de los cargos, tareas y lugares de trabajo con los que se relaciona (25%, "Mundo real"; los pesos de esa relación son criterio de quien armó el test) y de las materias del pénsum relacionadas (15%; las que ya cursaste pesan 1 y las que no, 0,4). La afinidad de un plan es el promedio de sus micro-credenciales ponderado por créditos. Supuestos y límites: ${lims.map((x,n)=>'('+(n+1)+') '+x).join('; ')}. La decisión final de tomar una trayectoria o materias complementarias es tuya y depende de tu propio criterio; este test es un consejo y una recomendación, no una resolución definitiva ni una predicción de tu futuro; puedes reevaluarte cuando quieras, y la jefatura de pregrado valida las combinaciones.</p>`;
   h+=`<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" id="copy">Copiar mi resumen</button><button class="btn ghost" id="img">Descargar como imagen</button><button class="btn ghost" id="reset">Borrar mis respuestas</button></div><textarea id="sum" hidden readonly aria-label="Resumen"></textarea>`;
   box.innerHTML=h;
   document.getElementById('copy').addEventListener('click',()=>{
