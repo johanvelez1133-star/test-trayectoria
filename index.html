@@ -62,7 +62,7 @@ details.sec[open]>summary::before{transform:rotate(90deg)}
 .rate span{display:grid;place-items:center;width:38px;height:34px;border:1px solid var(--line);border-radius:6px;font-weight:600;color:var(--muted);background:var(--bg)}
 .rate input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .rate input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
-.rate button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:16px;width:24px}
+.rate button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:18px;width:32px;height:34px}
 .rate button.unk{border:1px solid var(--line);border-radius:6px;width:auto;padding:0 7px;height:34px;font-size:12px;font-weight:600;background:var(--bg)}
 .rate button.unk.on{background:var(--muted);color:var(--bg);border-color:var(--muted)}
 /* resultados */
@@ -108,7 +108,7 @@ textarea{width:100%;min-height:150px;background:var(--surface);color:var(--ink);
 <h1>¿Qué trayectoria es para ti?</h1>
 <p class="lead">Califica cargos, tareas y lugares de trabajo reales, cómo te imaginas tu periodo de práctica, y también cada materia del pénsum y de las trayectorias, según cuánto te atraen. El ranking de más abajo se calcula solo con tus respuestas: mide cuánto te atrae cada opción, no cuánto paga ni cuántos empleos hay. Está hecho para estudiantes de Economía con el pénsum 2024-2 y sus trayectorias flexibles.</p>
 <ul class="legend">
-  <li><b>1</b>Nada</li><li><b>2</b>Poco</li><li><b>3</b>Normal</li><li><b>4</b>Me gusta</li><li><b>5</b>Me encanta</li><li>Sin marcar = aún no respondes, no cuenta</li><li><b>?</b>No la conozco o no la entiendo: tampoco cuenta</li><li><b>×</b>Quitar mi respuesta</li>
+  <li><b>1</b>Nada</li><li><b>2</b>Poco</li><li><b>3</b>Normal</li><li><b>4</b>Me gusta</li><li><b>5</b>Me encanta</li><li>Sin marcar = aún no respondes, no cuenta</li><li><b>No sé</b>No la conozco o no la entiendo: tampoco cuenta</li><li><b>×</b>Quitar mi respuesta</li>
 </ul>
 <p class="note" style="margin-top:-10px;margin-bottom:12px">Si aún no cursas una materia, califícala por lo que trata el tema (hay una descripción general debajo de cada materia de trayectoria), no solo por el nombre, y confirma el contenido en el syllabus antes de decidir. Si ya la cursaste, califícala con tu experiencia.</p>
 <p class="note" style="margin-bottom:22px"><b>Sobre la etiqueta de carga matemática (alta, media, baja):</b> es una suposición del contenido de cada materia hecha por quien armó el test, no un dato oficial ni validado por profesores. Tómala solo como referencia y revisa el syllabus. Estudios Internacionales lleva la etiqueta "(Inglés)": tiene un requisito de inglés; consulta el nivel exigido con la jefatura. Tus respuestas se guardan en este navegador.</p>
@@ -116,15 +116,15 @@ textarea{width:100%;min-height:150px;background:var(--surface);color:var(--ink);
 <details class="sec" open style="margin-bottom:18px">
   <summary><h2>Cómo funciona este test</h2></summary>
   <ul class="sec-note" style="padding-left:34px;margin:0 0 8px;max-width:75ch">
-    <li><b>Para qué sirve:</b> te ayuda a ver qué trayectoria flexible (los 21 créditos flexibles; puedes cursar más si quieres, por ejemplo dos micro-credenciales de 12) se parece más a lo que te gusta. Mide afinidad, no cuánto paga ni cuántos empleos hay. Es una guía, no una predicción ni una decisión: es un consejo y una recomendación, y al final la decisión de tomar una trayectoria o complementarias se basa en tu propio criterio. La decisión final de tomar una trayectoria o complementarias es tuya y se basa en tu propio criterio. Cualquiera sea tu resultado, puedes volver a hacerlo y reevaluarte, y la validación final de las combinaciones la hace la jefatura de pregrado.</li>
+    <li><b>Para qué sirve:</b> te ayuda a ver qué trayectoria flexible (los 21 créditos flexibles; puedes cursar más si quieres, por ejemplo dos micro-credenciales de 12) se parece más a lo que te gusta. Mide afinidad, no cuánto paga ni cuántos empleos hay. Es una guía, no una predicción ni una decisión: es un consejo y una recomendación. La decisión final de tomar una trayectoria o complementarias es tuya y se basa en tu propio criterio. Cualquiera sea tu resultado, puedes volver a hacerlo y reevaluarte, y la validación final de las combinaciones la hace la jefatura de pregrado.</li>
     <li><b>Quién lo puede hacer:</b> cualquier estudiante de Economía de cualquier semestre. No necesitas haber cursado las materias ni haber hecho la práctica.</li>
     <li><b>Cómo se responde:</b> califica de 1 (nada) a 5 (me encanta) cuánto te atrae cada cargo, tarea, lugar de trabajo o materia. Cada respuesta se guarda al instante.</li>
-    <li><b>Si no la conoces:</b> déjala sin marcar y no cuenta. Si la marcas, cuenta como una opinión tuya, así que no pongas 3 "por salir del paso". Si no has cursado una materia, guíate por la descripción que aparece debajo, no solo por el nombre.</li>
+    <li><b>Si no la conoces:</b> déjala sin marcar o pulsa "No sé"; en ambos casos no cuenta. Si la marcas, cuenta como una opinión tuya, así que no pongas 3 "por salir del paso". Si no has cursado una materia, guíate por la descripción que aparece debajo, no solo por el nombre.</li>
     <li><b>El botón "No sé":</b> márcalo si no conoces la materia o no entiendes la pregunta. No suma ni resta (igual que dejarla sin marcar), pero queda registrado y el test te avisa cuánta información le falta a cada resultado.</li>
     <li><b>La ×:</b> quita tu respuesta de esa pregunta y la deja sin marcar, por si te equivocaste o prefieres que no cuente.</li>
     <li><b>Tu semestre:</b> es solo un control. Sirve para marcar como cursadas las materias de los semestres anteriores (puedes ajustarlas con "ya la cursé"). En las materias del pénsum (15 % del cálculo), una cursada pesa más que una que no has visto, porque ahí tu opinión viene de la experiencia.</li>
-    <li><b>Qué pesa más:</b> tus calificaciones de las materias de cada micro-credencial (60 %), los cargos y tareas del mundo real (25 %) y las materias del pénsum relacionadas (15 %). Las preguntas de trabajar por tu cuenta cuentan dentro del 25 % del mundo real, y además generan una sección aparte con tu interés por ser independiente.</li>
-    <li><b>Cuándo sale el resultado:</b> cuando respondes al menos 12 preguntas (de cualquier sección). Entre más respondas, más confiable. Al final verás el mejor plan (de 21 créditos o más), los siguientes cuatro, todos los planes y cada micro-credencial por separado.</li>
+    <li><b>Qué pesa más</b> (los porcentajes son criterio de quien armó el test, no un estándar)<b>:</b> tus calificaciones de las materias de cada micro-credencial (60 %), los cargos y tareas del mundo real (25 %) y las materias del pénsum relacionadas (15 %). Las preguntas de trabajar por tu cuenta cuentan dentro del 25 % del mundo real, y además generan una sección aparte con tu interés por ser independiente.</li>
+    <li><b>Cuándo sale el resultado:</b> cuando cumples un mínimo de respuestas de cada tipo: 30 preguntas en total, 10 materias de las trayectorias (de al menos 4 micro-credenciales distintas) y cargos, tareas o lugares de trabajo suficientes (al menos 3 relacionados con cada micro-credencial, lo que suele requerir contestar buena parte de la sección 1). Mientras falte alguno, el test te muestra cuánto te falta de cada uno y no da recomendación. Entre más respondas, más confiable. Al final verás el mejor plan (de 21 créditos o más), los siguientes cuatro, todos los planes y cada micro-credencial por separado.</li>
     <li><b>Tus datos:</b> las respuestas se guardan solo en tu navegador, nadie más las ve. Con "Copiar mi resumen" las compartes si quieres, y con "Borrar mis respuestas" empiezas de cero.</li>
   </ul>
 </details>
@@ -212,7 +212,7 @@ const T = {
 const INFO = {
  EC:'<b>Orden sugerido:</b> Inferencia causal, Microeconometría, Macroeconometría y series de tiempo, y al final Tópicos en econometría avanzada. <b>Qué desarrollas:</b> capacidades avanzadas para analizar datos económicos, identificar relaciones causales y modelar fenómenos micro y macro con econometría aplicada a la toma de decisiones.',
  MA:'<b>Orden sugerido:</b> siempre Inferencia causal primero; luego Tópicos en economía, y se suman Finanzas públicas y Economía experimental. <b>Qué desarrollas:</b> análisis económico aplicado: relaciones causales, comportamiento estratégico de empresas y mercados, intervención del Estado, evaluación de políticas y decisiones con métodos experimentales.',
- CD:'<b>Tres rutas de 3 materias:</b> (1) Valoración de instrumentos financieros: Procesos estocásticos 1, luego 2, y Sistemas lineales o Análisis numérico. (2) Modelación matemática y simulación: Sistemas lineales, Modelación experimental y Análisis numérico (o Procesos estocásticos 1). (3) Optimización: Optimización 1, Optimización 2 y Análisis numérico (o Análisis 1).',
+ CD:'<b>Tres rutas de 3 materias:</b> (1) Valoración de instrumentos financieros: Procesos estocásticos 1, luego 2, y Sistemas lineales o Análisis numérico. (2) Modelación matemática y simulación: Sistemas lineales, Modelación experimental y Análisis numérico (o Procesos estocásticos 1). (3) Optimización: Optimización 1, Optimización II y Análisis numérico (o Análisis I).',
  PP:'<b>Orden sugerido:</b> Administración pública, luego Análisis y diseño de políticas públicas, luego Instrumentos y evaluación; Gobernanza local es un complemento opcional. Otra materia de la trayectoria es Planeación y legislación. <b>Qué desarrollas:</b> cómo funciona el Estado y cómo diseñar, implementar y evaluar políticas públicas.',
  EF:'<b>Rutas que muestra la jefatura (3 materias):</b> para una noción del mercado de valores, Renta fija, Renta variable y Estrategia financiera corporativa; para nociones de finanzas corporativas, Renta variable, Valoración de empresas y Estrategia financiera corporativa. Derivados complementa para quien quiere el énfasis completo. <b>Ojo:</b> las rutas de 3 materias son ejemplos de combinación; el mínimo para la micro-credencial (12 créditos, 4 materias) y su reconocimiento los define la jefatura de pregrado.',
  GFR:'<b>Rutas:</b> (1) Planeación financiera, Métodos empíricos y Gestión de riesgos (planeación y gestión financiera). (2) Planeación financiera, Gestión de riesgos y Finanzas pensionales y seguros (riesgos y protección). (3) Planeación, Métodos empíricos, Gestión de riesgos y Finanzas pensionales (finanzas cuantitativas). (4) Planeación, Métodos empíricos, Gestión de riesgos y Ética y gobierno corporativo. También puedes tomar las cinco.',
@@ -422,6 +422,21 @@ function build(){
 }
 
 /* ===== Cálculo ===== */
+const MINQ=30, MINCRS=10, MINMIC=4, MINJOBMIC=3; /* mínimos para mostrar ranking: respuestas totales, materias de trayectorias (en cuántas micro) y cargos/tareas */
+function readiness(){
+  const cs=new Set(), mics=new Set();
+  Object.keys(T).forEach(k=>T[k].c.forEach(([id])=>{ if(R[id]!=null){cs.add(id); mics.add(k);} }));
+  const jobs=JOBFLAT.filter(([id])=>R[id]!=null).length;
+  const done=[...allIds].filter(id=>R[id]!=null).length;
+  const lack=Object.keys(T).map(k=>{
+    const rel=JOBFLAT.filter(([id,nm,w])=>w[k]);
+    const have=rel.filter(([id])=>R[id]!=null).length;
+    if(have>=MINJOBMIC) return null;
+    const sug=rel.filter(([id])=>R[id]==null).sort((a,b)=>b[2][k]-a[2][k]).slice(0,5).map(x=>x[1]);
+    return {k,name:T[k].n,have,need:MINJOBMIC-have,sug};
+  }).filter(Boolean);
+  return {done,crs:cs.size,mic:mics.size,jobs,lack,ok:done>=MINQ&&cs.size>=MINCRS&&mics.size>=MINMIC&&lack.length===0};
+}
 const mean=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
 function microInt(k){
   const t=T[k];
@@ -468,7 +483,12 @@ function plans(){
     parts.forEach(p=>{
       if(p.k){const m=MI[p.k];const t=T[p.k];const cr=p.cr||t.cr;credits+=cr;sum+=cr*m.val;mk+=cr*t.mk;
         m.pick.forEach(x=>courses.push({nm:x.nm,r:x.r,from:t.n}));
-        if(m.miss>0) courses.push({nm:`${m.miss} ${m.miss>1?'materias':'materia'} más de ${t.n} por elegir: aún no calificas suficientes materias de esta micro-credencial`,r:null,from:t.n});
+        if(m.miss>0){
+          if(t.req===t.c.length){ /* se cursan todas: se listan por nombre las que no calificaste */
+            const done=new Set(m.pick.map(x=>x.id));
+            t.c.filter(([id])=>!done.has(id)).forEach(([id,nm])=>courses.push({nm:nm+' (sin calificar; se toma como neutra)',r:null,from:t.n}));
+          } else courses.push({nm:`${m.miss} ${m.miss>1?'materias':'materia'} más de ${t.n} por elegir: aún no calificas suficientes materias de esta micro-credencial`,r:null,from:t.n});
+        }
       } else {let nul=0; p.items.forEach(x=>{credits+=3;sum+=3*CM;mk+=3*MK_COMPL; if(x.id==null) nul++; else courses.push({nm:x.nm+' (sugerida)',r:x.r,from:'Complementaria'});}); if(nul>0) courses.push({nm:`${nul} ${nul>1?'complementarias':'complementaria'} por elegir: aún no calificas suficientes`,r:null,from:'Complementaria'});}
     });
     courses=courses.filter((c,i,a)=>a.findIndex(x=>x.nm===c.nm)===i);
@@ -512,16 +532,18 @@ function render(){
     el.textContent=`${d}/${ids.length}`;
   });
   const box=document.getElementById('resbody');
-  if(done<12){
+  const RD=readiness();
+  if(!RD.ok){
     document.getElementById('ctl').hidden=true;
-    box.innerHTML=`<div class="empty">Responde al menos 12 preguntas para ver el ranking. Llevas ${done}. Entre más califiques, más fiable el resultado.</div>`;
+    const li=(ok,t)=>`<li style="list-style:none">${ok?'✓':'○'} ${t}</li>`;
+    box.innerHTML=`<div class="empty"><b>Aún no hay una recomendación.</b> Para que el resultado sea confiable el test pide un mínimo de respuestas de cada tipo (las marcadas "No sé" no cuentan):<ul style="padding-left:0;margin:10px 0">${li(RD.done>=MINQ,`Al menos ${MINQ} preguntas en total. Llevas ${RD.done}.`)}${li(RD.crs>=MINCRS,`Al menos ${MINCRS} materias de las trayectorias. Llevas ${RD.crs}.`)}${li(RD.mic>=MINMIC,`Esas materias deben ser de al menos ${MINMIC} micro-credenciales distintas. Llevas ${RD.mic}.`)}${li(RD.lack.length===0,`Cargos, tareas o lugares de trabajo (sección 1): para poder comparar todas las micro-credenciales, cada una necesita al menos ${MINJOBMIC} preguntas relacionadas que hayas calificado.${RD.lack.length?' Te faltan, por micro-credencial (y algunas preguntas de la sección 1 que cuentan para ella):':''}`)}${RD.lack.map(l=>`<li style="list-style:none;margin:6px 0 0 18px">• <b>${esc(l.name)}</b>: ${l.need===1?'falta 1 pregunta':'faltan '+l.need+' preguntas'}. Por ejemplo: ${l.sug.map(x=>'«'+esc(x)+'»').join('; ')}.</li>`).join('')}</ul>Entre más califiques, más fiable el resultado.</div>`;
     return;
   }
   const {out,MI}=plans();
   const top=out[0];
-  if(!Object.values(T).some(t=>t.c.some(([id])=>R[id]!=null))){
+  if(top.courses.every(c=>c.r==null)&&Math.abs(top.i100-50)<0.05){
     document.getElementById('ctl').hidden=true;
-    box.innerHTML=`<div class="empty"><b>Aún no hay una recomendación.</b> Ya respondiste ${done} preguntas, pero ninguna es una materia de las trayectorias, y sin eso todos los planes quedan empatados en neutro. Califica algunas materias de las secciones de cada micro-credencial (también cuentan los cargos y tareas que ya marcaste) y aquí aparecerá tu ranking.</div>`;
+    box.innerHTML=`<div class="empty"><b>Aún no hay una recomendación.</b> Ya respondiste ${done} preguntas, pero con ellas el test no logra diferenciar los planes: todos quedan en neutro porque faltan calificaciones de materias de las trayectorias. Califica algunas materias de las secciones de cada micro-credencial (también cuentan los cargos y tareas que ya marcaste) y aquí aparecerá tu ranking.</div>`;
     return;
   }
   document.getElementById('ctl').hidden=!PRIV;
@@ -550,7 +572,7 @@ function render(){
       const cs=m.pick.map(x=>`${esc(x.nm)} (${x.r})`).join(', ')||'sin materias calificadas';
       const js=JOBFLAT.filter(([id,nm,w])=>R[id]!=null&&R[id]>=4&&w[k]>=0.5).sort((a,b)=>R[b[0]]*b[2][k]-R[a[0]]*a[2][k]).slice(0,4).map(x=>`${esc(x[1])} (${R[x[0]]})`).join('; ');
       const lo=JOBFLAT.filter(([id,nm,w])=>R[id]!=null&&R[id]<=2&&w[k]>=0.5).slice(0,3).map(x=>`${esc(x[1])} (${R[x[0]]})`).join('; ');
-      return `<p><b>${esc(t.n)}</b><br>Materias que más pesaron: ${cs}.${js?`<br>Cargos o tareas que marcaste alto y se relacionan: ${js}.`:''}${lo?`<br>Te restaron: ${lo}.`:''}</p>`;
+      return `<p><b>${esc(t.n)}</b><br>Materias que calificaste y se consideraron: ${cs}.${js?`<br>Cargos o tareas que marcaste alto y se relacionan: ${js}.`:''}${lo?`<br>Te restaron: ${lo}.`:''}</p>`;
     }).join('');
     if(parts) h+=`<details style="margin-top:10px"><summary style="cursor:pointer;color:var(--accent);font-weight:600">¿Por qué salió esto?</summary><div class="note" style="margin-top:8px">Esto es lo que más empujó tu mejor opción (entre paréntesis, tu calificación):</div>${parts}</details>`;
   }
