@@ -79,7 +79,7 @@ details.sec[open]>summary::before{transform:rotate(90deg)}
 ul.cl{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 16px}
 ul.cl li{font-size:13px;display:flex;gap:6px;min-width:0}
 ul.cl li em{font-style:normal;font-weight:600;min-width:14px}
-.r1,.r2{color:var(--bad)} .r3{color:var(--muted)} .r4,.r5{color:var(--good)} .r0{color:var(--warn)}
+.r1,.r2{color:var(--bad)} .r3{color:var(--muted)} .r4,.r5{color:var(--good)} .r0{color:var(--muted)}
 table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
@@ -455,7 +455,7 @@ function best(poolIds,nNeed){
   const all=[];
   COMPL.forEach(g=>g.items.forEach(([id,nm])=>all.push({id,nm,r:R[id]})));
   const rated=all.filter(x=>x.r!=null).sort((a,b)=>b.r-a.r).slice(0,nNeed);
-  while(rated.length<nNeed) rated.push({id:null,nm:'(curso sin calificar, se asume neutro)',r:null});
+  while(rated.length<nNeed) rated.push({id:null,nm:'Una complementaria (tú eliges cuál; aún sin calificar, se toma como neutra)',r:null});
   return rated;
 }
 function plans(){
@@ -468,7 +468,7 @@ function plans(){
     parts.forEach(p=>{
       if(p.k){const m=MI[p.k];const t=T[p.k];const cr=p.cr||t.cr;credits+=cr;sum+=cr*m.val;mk+=cr*t.mk;
         m.pick.forEach(x=>courses.push({nm:x.nm,r:x.r,from:t.n}));
-        for(let i=0;i<m.miss;i++) courses.push({nm:'(curso sin calificar de '+t.n+')',r:null,from:t.n});
+        for(let i=0;i<m.miss;i++) courses.push({nm:'Una materia de '+t.n+' (tú eliges cuál; aún sin calificar, se toma como neutra)',r:null,from:t.n});
       } else {p.items.forEach(x=>{credits+=3;sum+=3*CM;mk+=3*MK_COMPL;courses.push({nm:x.id==null?x.nm:x.nm+' (sugerida)',r:x.r,from:'Complementaria'});});}
     });
     courses=courses.filter((c,i,a)=>a.findIndex(x=>x.nm===c.nm)===i);
@@ -500,7 +500,7 @@ function plans(){
 const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const f1=x=>(Math.round(x*10)/10).toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1});
 function coursesHTML(cs){
-  return '<ul class="cl">'+cs.map(c=>`<li><em class="r${c.r==null?0:c.r}">${c.r==null?'?':c.r}</em><span>${esc(c.nm)}</span></li>`).join('')+'</ul>';
+  return '<ul class="cl">'+cs.map(c=>`<li><em class="r${c.r==null?0:c.r}">${c.r==null?'–':c.r}</em><span>${esc(c.nm)}</span></li>`).join('')+'</ul>';
 }
 function render(){
   document.querySelectorAll('[data-took]').forEach(c=>{c.checked=TAKEN.has(c.dataset.took);});
@@ -519,6 +519,11 @@ function render(){
   }
   const {out,MI}=plans();
   const top=out[0];
+  if(!Object.values(T).some(t=>t.c.some(([id])=>R[id]!=null))){
+    document.getElementById('ctl').hidden=true;
+    box.innerHTML=`<div class="empty"><b>Aún no hay una recomendación.</b> Ya respondiste ${done} preguntas, pero ninguna es una materia de las trayectorias, y sin eso todos los planes quedan empatados en neutro. Califica algunas materias de las secciones de cada micro-credencial (también cuentan los cargos y tareas que ya marcaste) y aquí aparecerá tu ranking.</div>`;
+    return;
+  }
   document.getElementById('ctl').hidden=!PRIV;
   document.getElementById('wl').innerHTML=`<b>Peso de tus gustos: ${W}%</b> · mercado laboral: ${100-W}%`;
   document.getElementById('w').value=W;
