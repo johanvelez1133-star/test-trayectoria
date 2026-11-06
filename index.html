@@ -377,7 +377,7 @@ const SEM={contab:1,mat1:1,iec:1,hist:1,pens:2,matfin:2,mat2:2,mac1:2,comp:2,anf
 const takenFor=s=>new Set(Object.keys(SEM).filter(k=>SEM[k]<s));
 let SEMV=5;
 let TAKEN=takenFor(SEMV);
-try{const v=localStorage.getItem('tt_s'); if(v){SEMV=+v||5; TAKEN=takenFor(SEMV);} const s=localStorage.getItem('tt_t'); if(s) TAKEN=new Set(JSON.parse(s));}catch(e){}
+try{const v=localStorage.getItem('tt_s'); if(v!==null&&v!==''&&!isNaN(+v)){SEMV=+v; TAKEN=takenFor(SEMV);} const s=localStorage.getItem('tt_t'); if(s) TAKEN=new Set(JSON.parse(s));}catch(e){}
 const PRIV=false; if(PRIV) document.body.classList.add('showmkt'); else W=100;
 const save=()=>{try{localStorage.setItem('tt_r',JSON.stringify(R));localStorage.setItem('tt_u',JSON.stringify(UNK));if(PRIV)localStorage.setItem('tt_w',String(W));localStorage.setItem('tt_t',JSON.stringify([...TAKEN]));localStorage.setItem('tt_s',String(SEMV));}catch(e){}};
 const tookHTML=id=>`<label class="took" for="took_${id}"><input type="checkbox" data-took="${id}" id="took_${id}"${TAKEN.has(id)?' checked':''}>ya la cursé</label>`;
@@ -397,7 +397,7 @@ function build(){
   let html='';
   // Pensum
   let ids=[],b='';
-  b+=`<div class="row"><label for="sem" class="nm"><b>¿En qué semestre vas?</b> <span class="note">Es solo un control: cualquier semestre puede hacer el test. Marca como cursadas las materias de los semestres anteriores, y esto solo ajusta cuánto pesan tus calificaciones del pénsum.</span></label><select id="sem" style="font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">${[1,2,3,4,5,6,7,8,9].map(s=>`<option value="${s}"${s===SEMV?' selected':''}>Semestre ${s}</option>`).join('')}</select></div>`;
+  b+=`<div class="row"><label for="sem" class="nm"><b>¿En qué semestre vas?</b> <span class="note">Es solo un control: cualquier semestre puede hacer el test. Marca como cursadas las materias de los semestres anteriores, y esto solo ajusta cuánto pesan tus calificaciones del pénsum.</span></label><select id="sem" style="font:inherit;padding:6px 8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)"><option value="0"${SEMV===0?' selected':''}>Elige tu semestre</option>${[1,2,3,4,5,6,7,8,9].map(s=>`<option value="${s}"${s===SEMV?' selected':''}>Semestre ${s}</option>`).join('')}</select></div>`;
   PEN.forEach(g=>{b+=`<div class="grp">${g.g}</div>`;g.items.forEach(([id,n])=>{ids.push(id);b+=row(id,n,tookHTML(id));});});
   const jb=[],jids=[];
   JOBS.forEach(g=>{jb.push(`<div class="grp">${g.g}</div>`);g.items.forEach(([id,nm])=>{jids.push(id);jb.push(row(id,nm));});});
@@ -595,7 +595,7 @@ function render(){
   const rb=document.getElementById('reset'); let armed=false;
   rb.addEventListener('click',()=>{
     if(!armed){armed=true; rb.textContent='¿Seguro? Pulsa otra vez para borrar todo'; setTimeout(()=>{armed=false; if(rb.isConnected) rb.textContent='Borrar mis respuestas';},4000); return;}
-    R={}; UNK={}; SEMV=5; TAKEN=takenFor(5); if(!PRIV) W=100; save(); build(); bind(); render(); window.scrollTo({top:0,behavior:'smooth'});});
+    R={}; UNK={}; SEMV=0; TAKEN=new Set(); if(!PRIV) W=100; save(); build(); bind(); render(); window.scrollTo({top:0,behavior:'smooth'});});
   document.getElementById('img').addEventListener('click',()=>shareImage(out));
 }
 function bind(){
