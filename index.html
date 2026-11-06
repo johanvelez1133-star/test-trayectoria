@@ -468,8 +468,8 @@ function plans(){
     parts.forEach(p=>{
       if(p.k){const m=MI[p.k];const t=T[p.k];const cr=p.cr||t.cr;credits+=cr;sum+=cr*m.val;mk+=cr*t.mk;
         m.pick.forEach(x=>courses.push({nm:x.nm,r:x.r,from:t.n}));
-        for(let i=0;i<m.miss;i++) courses.push({nm:'Una materia de '+t.n+' (tú eliges cuál; aún sin calificar, se toma como neutra)',r:null,from:t.n});
-      } else {p.items.forEach(x=>{credits+=3;sum+=3*CM;mk+=3*MK_COMPL;courses.push({nm:x.id==null?x.nm:x.nm+' (sugerida)',r:x.r,from:'Complementaria'});});}
+        if(m.miss>0) courses.push({nm:`${m.miss} ${m.miss>1?'materias':'materia'} más de ${t.n} por elegir: aún no calificas suficientes materias de esta micro-credencial`,r:null,from:t.n});
+      } else {let nul=0; p.items.forEach(x=>{credits+=3;sum+=3*CM;mk+=3*MK_COMPL; if(x.id==null) nul++; else courses.push({nm:x.nm+' (sugerida)',r:x.r,from:'Complementaria'});}); if(nul>0) courses.push({nm:`${nul} ${nul>1?'complementarias':'complementaria'} por elegir: aún no calificas suficientes`,r:null,from:'Complementaria'});}
     });
     courses=courses.filter((c,i,a)=>a.findIndex(x=>x.nm===c.nm)===i);
     const interest=sum/credits; const i100=(interest-1)/4*100; const market=mk/credits;
@@ -530,7 +530,7 @@ function render(){
   let h=`<div class="hero"><div class="hero-top"><div><div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Mejor opción para ti</div>
    <h3>${esc(top.name)}</h3>${top.badge?`<span class="badge">${esc(top.badge)}</span>`:''}</div><div class="score">${f1(top.final)}</div></div>
    <div class="split"><span>Afinidad con tus gustos: <b>${f1(top.i100)}</b>/100</span><span class="priv">Mercado laboral: <b>${f1(top.market)}</b>/100</span></div>
-   <div class="note" style="margin-bottom:4px">Materias que cursarías (tu calificación a la izquierda):</div>${coursesHTML(top.courses)}</div>`;
+   <div class="note" style="margin-bottom:4px">Materias que cursarías en este plan, con tu calificación a la izquierda. Si aún no calificas suficientes, la lista indica cuántas faltan por elegir:</div>${coursesHTML(top.courses)}</div>`;
   h+=`<p class="note" style="margin:10px 0"><b>Recuerda:</b> este resultado es un consejo. La decisión final de tomar una trayectoria o complementarias es tuya y depende de tu criterio.</p>`;
   // aviso de confianza
   {
